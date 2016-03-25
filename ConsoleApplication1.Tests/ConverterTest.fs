@@ -18,4 +18,4 @@ module ConverterTest2 =
     let ``It should convert meters to feets as expected`` () =
         let actual =  32.0<m> |> metersToFeets
 
-        test <@ actual = 104.9868766<ft> @>
+        test <@ actual = 104.98687664041995<ft> @>
