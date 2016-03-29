@@ -1,11 +1,15 @@
 ﻿
+
 [<AutoOpen>]
 module DistanceUnits
+
+open System
 
 [<Measure>] type m
 [<Measure>] type cm
 [<Measure>] type inch
 [<Measure>] type ft
+[<Measure>] type h
 
 
 let mPerCm : float<m/cm> = 0.01<m/cm>
@@ -21,3 +25,4 @@ let inchesToCentimeters: float<inch> -> float<cm> = (*) cmPerInch
 let metersToInches: float<m> -> float<inch> = metersToCentimeters >> centimetersToInches
 let metersToFeets: float<m> -> float<ft> =  metersToInches >> inchesToFeets
 let feetsToInches: float<ft> -> float<inch> = (*) inchPerFeet
+let metersToHours(m: float<m>): int<h> = raise(new InvalidOperationException("Unsupported operation"))
